@@ -5,6 +5,8 @@ public class Libro {
     private String libro;
     private String autor;
 
+    private String ISBN;
+
     private String editorial;
 
     public Libro(String libro,String autor, String editorial){
@@ -39,6 +41,13 @@ public class Libro {
 
     }
 
+    public String getISBN(){
+
+
+        return ISBN;
+
+    }
+
     public void setNombreLibro(String libro){
 
         this.libro=libro;
@@ -50,10 +59,14 @@ public class Libro {
         this.autor=autor;
 
     }
-    public void setEditorial(String autor){
+    public void setEditorial(String editorial){
 
         this.editorial=editorial;
 
     }
+    public void setISBN(String ISBN){
 
+        this.ISBN=ISBN;
+
+    }
 }
