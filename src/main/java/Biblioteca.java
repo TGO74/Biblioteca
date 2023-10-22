@@ -9,9 +9,12 @@ public class Biblioteca {
     private String nombreBiblioteca;
     private String direccionBiblioteca;
 
+
+
+
     //Constructor
 
-    public Biblioteca(String nombreBiblioteca,String direccion){
+    public Biblioteca(String nombreBiblioteca,String direccionBiblioteca){
 
         this.nombreBiblioteca= nombreBiblioteca;
         this.direccionBiblioteca= direccionBiblioteca;
@@ -55,8 +58,54 @@ public ArrayList<Libro> getLibros(){
     }
 
 
+    public boolean agregarLibro(Libro libro){
 
+        if (!libroExiste(libro)) {
+            this.listaDeLibros.add(libro);
+            return true;   }
+        else {
+            System.out.println("El libro ya existe en la bibliotea" +nombreBiblioteca);
+            return false;   }
 
+    }
+
+    public Libro buscarLibro(Libro libro){
+
+        for (Libro l : listaDeLibros) {
+            if(!libro.getNombreLibro().equals(l.getNombreLibro())) {
+                System.out.println("El libro no se encuentra");
+            }
+
+        }
+
+        System.out.println("El libro "+libro+"está disponible");
+
+        return libro;
+
+    }
+
+    public ArrayList<Libro> obtenerLibroPorAutor(String autor){
+        ArrayList<Libro> librosPorAutor = new ArrayList<>();
+
+        for (Libro libro : this.listaDeLibros) {
+            if(libro.getNombreAutor().equals((autor))) {
+                librosPorAutor.add(libro);
+            }
+        }
+
+        return listaDeLibros;
+    }
+
+    public boolean libroExiste(Libro libro){
+
+        for (Libro l : listaDeLibros) {
+            if(libro.getISBN().equals(l.getISBN())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 
 }
