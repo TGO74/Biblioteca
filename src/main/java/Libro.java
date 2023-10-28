@@ -1,72 +1,50 @@
-import java.util.ArrayList;
-
 public class Libro {
+	private String libro;
+	private String autor;
+	private String editorial;
 
-    private String libro;
-    private String autor;
+	private String ISBN;
 
-    private String ISBN;
+	public Libro(String libro,String ISBN, String autor, String editorial) {
+		this.libro = libro;
+		this.ISBN = ISBN;
+		this.autor = autor;
+		this.editorial = editorial;
 
-    private String editorial;
+	}
 
-    public Libro(String libro,String autor, String editorial){
+	/**
+	 * getters and setters
+	 */
+	public String getNombreLibro() {
+		throw new UnsupportedOperationException();
+	}
 
-        this.libro= libro;
-        this.autor= autor;
-        this.editorial=editorial;
+	public String getNombreAutor() {
+		throw new UnsupportedOperationException();
+	}
 
+	public void setNombreLibro(String libro) {
+		throw new UnsupportedOperationException();
+	}
 
-    }
+	public void setNombreAutor(String autor) {
+		throw new UnsupportedOperationException();
+	}
 
-    //getters and setters
+	public void setEditorial(String editorial) {
+		this.editorial = editorial;
+	}
 
-    public String getNombreLibro(){
+	public String getEditorial() {
+		return this.editorial;
+	}
 
+	public String getISBN() {
+		return this.ISBN;
+	}
 
-        return libro;
-
-    }
-
-    public String getNombreAutor(){
-
-
-        return autor;
-
-    }
-
-    public String getEditorial(){
-
-
-        return editorial;
-
-    }
-
-    public String getISBN(){
-
-
-        return ISBN;
-
-    }
-
-    public void setNombreLibro(String libro){
-
-        this.libro=libro;
-
-    }
-
-    public void setNombreAutor(String autor){
-
-        this.autor=autor;
-
-    }
-    public void setEditorial(String editorial){
-
-        this.editorial=editorial;
-
-    }
-    public void setISBN(String ISBN){
-
-        this.ISBN=ISBN;
-
-    }
+	public void setISBN(String ISBN) {
+		this.ISBN = ISBN;
+	}
 }
