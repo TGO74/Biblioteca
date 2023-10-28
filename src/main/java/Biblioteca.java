@@ -106,6 +106,8 @@ public ArrayList<Libro> getLibros(){
 
         return false;
     }
+    
+public Prestamo
 
 
 }
