@@ -1,35 +1,29 @@
-public class Usuario {
-	private String nombre;
-	private String rut;
-	private String numeroTelefonico;
-	public Prestamo unnamed_Prestamo_;
-	public Biblioteca unnamed_Biblioteca_;
 
-	public Usuario(String nombre, String rut, String numeroTelefonico) {
-		throw new UnsupportedOperationException();
+import java.util.ArrayList;
+public class Usuario extends Persona {
+
+	private ArrayList<Prestamo> prestamosUsuario = new ArrayList<Prestamo>();
+	private Biblioteca biblioteca;
+	private ArrayList<CorreoElectronico> correos = new ArrayList<CorreoElectronico>();
+
+	public Usuario(String nombre,String apellido,int edad,String rut,String direccion,String numeroTelefonico, Biblioteca biblioteca) {
+		super(nombre, apellido, rut, edad, direccion, numeroTelefonico);
+
+		this.biblioteca = biblioteca;
+
 	}
 
-	public String getNombre() {
-		return this.nombre;
+	public ArrayList<Prestamo> getPrestamos() {
+		return this.prestamosUsuario;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setPrestamos(ArrayList<Prestamo> prestamosUsuario) {
+		this.prestamosUsuario = prestamosUsuario;
 	}
 
-	public String getRut() {
-		return this.rut;
+	//Método agregar un prestamo a la lista de prestamos del usuario
+	public void agregarPrestamoUsuario(Prestamo prestamo) {
+		this.prestamosUsuario.add(prestamo);
 	}
 
-	public void setRut(String rut) {
-		this.rut = rut;
-	}
-
-	public String getNumeroTelefonico() {
-		return this.numeroTelefonico;
-	}
-
-	public void setNumeroTelefonico(String numeroTelefonico) {
-		this.numeroTelefonico = numeroTelefonico;
-	}
 }

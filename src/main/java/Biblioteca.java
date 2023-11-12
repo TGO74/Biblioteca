@@ -4,9 +4,11 @@ import java.util.ArrayList;
 public class Biblioteca {
 	private String nombreBiblioteca;
 	private java.util.ArrayList<Libro> listaDeLibros;
+
+	private ArrayList<Prestamo> prestamos = new ArrayList<Prestamo>();
 	private String direccionBiblioteca;
 	public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-	public ArrayList<Prestamo> prestamos = new ArrayList<Prestamo>();
+	public ArrayList<Libro> librosPrestados = new ArrayList<Libro>();
 	public ArrayList<Bibliotecario> bibliotecarios = new ArrayList<Bibliotecario>();
 
 
@@ -131,10 +133,19 @@ public class Biblioteca {
 		return false;
 	}
 
-	public Prestamo generarPrestamo(Object bibliotecario_bibliotecario, Object usuario_usuario, Object libro_libro, Object date_fechaInicio, Object date_fechaTermino) {
+	public Prestamo generarPrestamo(Bibliotecario bibliotecario, Usuario usuario, Libro libro, Date fechaInicio, Date fechaTermino) {
+		Prestamo prestamo = new Prestamo(bibliotecario, usuario, libro, fechaInicio, fechaTermino);
 
-		Prestamo prestamo = new Prestamo((Bibliotecario) bibliotecario_bibliotecario, (Usuario) usuario_usuario, (Libro) libro_libro, (Date) date_fechaInicio, (Date) date_fechaTermino);
-		prestamos.add(prestamo);
+		// Agregar libro a la lista de libros prestados
+		librosPrestados.add(libro);
+
+		// Agregar el préstamo a la lista de préstamos del usuario
+		usuario.agregarPrestamoUsuario(prestamo);
+
+		//Cambiar estado del libro
+		libro.setEstadoLibro("Prestado");
+
 		return prestamo;
 	}
+
 }
