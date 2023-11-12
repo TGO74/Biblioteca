@@ -5,11 +5,14 @@ public class Libro {
 
 	private String ISBN;
 
+	private  String estadoLibro;
+
 	public Libro(String libro,String ISBN, String autor, String editorial) {
 		this.libro = libro;
 		this.ISBN = ISBN;
 		this.autor = autor;
 		this.editorial = editorial;
+        this.estadoLibro = "Disponible";
 
 	}
 
@@ -47,4 +50,14 @@ public class Libro {
 	public void setISBN(String ISBN) {
 		this.ISBN = ISBN;
 	}
+
+	public String getEstadoLibro() {
+		return this.estadoLibro;
+	}
+
+	public void setEstadoLibro(String estadoLibro) {
+		this.estadoLibro = estadoLibro;
+	}
+
+
 }
