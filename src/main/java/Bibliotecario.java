@@ -1,11 +1,22 @@
-public class Bibliotecario {
-	private String nombre;
-	private String rut;
-	private String direccion;
-	private int id;
 
-	public Bibliotecario(String rut, String nombre, String direccion, int id) {
-		throw new UnsupportedOperationException();
+import java.util.ArrayList;
+
+public class Bibliotecario extends Persona{
+
+	private int idBibliotecario;
+	private String jornada;
+
+	private float sueldo;
+
+
+	ArrayList<Prestamo> prestamosBibliotecario = new ArrayList<Prestamo>();
+
+
+
+	public Bibliotecario(String nombre,String apellido,int edad,String rut,String direccion,String numeroTelefonico) {
+		super(nombre,apellido,rut,edad,direccion,numeroTelefonico);
+
+
 	}
 
 	public String getNombre() {
@@ -32,11 +43,4 @@ public class Bibliotecario {
 		this.direccion = direccion;
 	}
 
-	public int getId() {
-		return this.id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 }
