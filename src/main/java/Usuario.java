@@ -1,4 +1,5 @@
 
+
 import java.util.ArrayList;
 public class Usuario extends Persona {
 
@@ -25,5 +26,4 @@ public class Usuario extends Persona {
 	public void agregarPrestamoUsuario(Prestamo prestamo) {
 		this.prestamosUsuario.add(prestamo);
 	}
-
 }
