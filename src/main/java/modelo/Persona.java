@@ -1,5 +1,6 @@
 package modelo;
-public class Persona {
+import java.util.ArrayList;
+abstract class Persona {
     protected String nombre;
     protected String apellido;
     protected String rut;
@@ -10,6 +11,10 @@ public class Persona {
 
     protected String numeroTelefonico;
 
+    protected Biblioteca biblioteca;
+
+    protected ArrayList<CorreoElectronico> correos = new ArrayList<CorreoElectronico>();
+
 
     //Constructor
     public Persona(String nombre, String apellido, String rut, int edad, String direccion, String numeroTelefonico) {
@@ -19,24 +24,40 @@ public class Persona {
     }
 
     //Getters y Setters
-    public  String getNombre() {
+    public String getNombre() {
         return this.nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public String getApellido() {
         return this.apellido;
     }
+
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
     public String getRut() {
         return this.rut;
     }
+
     public void setRut(String rut) {
         this.rut = rut;
     }
+
+    public ArrayList<CorreoElectronico> getCorreos() {
+        return correos;
+
+    }
+
+    public void setCorreos(ArrayList<CorreoElectronico> correos) {
+        this.correos = correos;
+    }
+
+
 
     //Método para cambiar numero telefonico
     public void cambiarNumeroTelefonico(String numeroTelefonico) {
@@ -48,7 +69,7 @@ public class Persona {
         this.direccion = direccion;
     }
 
-//Método para cambiar edad
+    //Método para cambiar edad
     public void cambiarEdad(int edad) {
         this.edad = edad;
     }
@@ -101,20 +122,10 @@ public class Persona {
     //Método para obtener nombre completo
     public String obtenerNombreCompleto() {
         return this.nombre + " " + this.apellido;
+
     }
-
-    //Método para obtener datos
-    public String obtenerDatos() {
-        return "Nombre: " + this.nombre + "\n" + "Apellido: " + this.apellido + "\n" + "Rut: " + this.rut + "\n" + "Edad: " + this.edad + "\n" + "Dirección: " + this.direccion + "\n" + "Número telefónico: " + this.numeroTelefonico;
-    }
-
-    //Método para obtener datos de persona
-    public String obtenerDatosPersona() {
-        return "Nombre: " + this.nombre + "\n" + "Apellido: " + this.apellido + "\n" + "Rut: " + this.rut + "\n" + "Edad: " + this.edad + "\n" + "Dirección: " + this.direccion + "\n" + "Número telefónico: " + this.numeroTelefonico;
-    }
-
-
-
+        //Método para obtener datos de persona
+        public abstract String obtenerDatosPersona ();
 
 
 

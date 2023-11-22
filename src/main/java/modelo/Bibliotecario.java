@@ -19,28 +19,55 @@ public class Bibliotecario extends Persona{
 
 	}
 
-	public String getNombre() {
-		return this.nombre;
+	public int getIdBibliotecario() {
+		return this.idBibliotecario;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setIdBibliotecario(int idBibliotecario) {
+		this.idBibliotecario = idBibliotecario;
 	}
 
-	public String getRut() {
-		return this.rut;
+	public String getJornada() {
+		return this.jornada;
 	}
 
-	public void setRut(String rut) {
-		this.rut = rut;
+	public void setJornada(String jornada) {
+		this.jornada = jornada;
 	}
 
-	public String getDireccion() {
-		return this.direccion;
+	public float getSueldo() {
+		return this.sueldo;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setSueldo(float sueldo) {
+		this.sueldo = sueldo;
 	}
+
+	public ArrayList<Prestamo> getPrestamosBibliotecario() {
+		return this.prestamosBibliotecario;
+	}
+
+	public void setPrestamosBibliotecario(ArrayList<Prestamo> prestamosBibliotecario) {
+		this.prestamosBibliotecario = prestamosBibliotecario;
+	}
+
+	//Método agregar un prestamo a la lista de prestamos del usuario
+
+
+	public void agregarPrestamoBibliotecario(Prestamo prestamo) {
+		this.prestamosBibliotecario.add(prestamo);
+	}
+
+
+
+
+
+	public String obtenerDatosPersona() {
+			return "Nombre: " + this.nombre + " " + this.apellido + "\n" + "Rut: " + this.rut + "\n" + "Edad: " + this.edad + "\n" + "Dirección: " + this.direccion + "\n" + "Número telefónico: " + this.numeroTelefonico + "Biblioteca: " + this.biblioteca.getNombreBiblioteca() + "\n" + "ID bibliotecario: " + this.idBibliotecario + "\n" + "Jornada: " + this.jornada + "\n" + "Sueldo: " + this.sueldo + "\n" + "Lista de libros prestados: " + this.prestamosBibliotecario + "\n" + "Lista de correos: " + this.correos;
+
+
+	}
+
+
 
 }
