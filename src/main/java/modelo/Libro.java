@@ -1,3 +1,4 @@
+package modelo;
 public class Libro {
 	private String libro;
 	private String autor;
@@ -57,6 +58,10 @@ public class Libro {
 
 	public void setEstadoLibro(String estadoLibro) {
 		this.estadoLibro = estadoLibro;
+	}
+
+	public String toString() {
+		return this.libro + "," + this.ISBN + "," + this.autor + "," + this.editorial;
 	}
 
 

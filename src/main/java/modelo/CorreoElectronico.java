@@ -1,3 +1,4 @@
+package modelo;
 public class CorreoElectronico {
     private String direccionCorreoElectronico;
     private String proveedorCorreoElectronico;
